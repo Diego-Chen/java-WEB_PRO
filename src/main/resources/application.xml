@@ -53,8 +53,8 @@
     </bean>
 
     <!-- redis相关的注入 -->
-    <bean id="redisDao" class="com.cs.pro.dao.RedisDaoImpl">
-    </bean>
+	<!-- <bean id="redisDao" class="com.cs.pro.dao.RedisDaoImpl"> -->
+	<!-- </bean> -->
     <import resource="redis-config.xml" />
 
     <!-- 自动扫描注解的bean -->

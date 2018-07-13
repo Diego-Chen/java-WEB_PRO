@@ -3,13 +3,20 @@
     xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:context="http://www.springframework.org/schema/context"
     xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xmlns:task="http://www.springframework.org/schema/task"
     xsi:schemaLocation="
     http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context-3.2.xsd
     http://www.springframework.org/schema/mvc
-    http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd">
+    http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
+    http://www.springframework.org/schema/task 
+    http://www.springframework.org/schema/task/spring-task-4.0.xsd">
+
+    
+    
+    
 
     <!-- <mvc:annotation-driven /> -->
     <!-- 设置Jackson在返回的时候过滤掉null的数据 -->
@@ -35,6 +42,18 @@
         
         
     </mvc:annotation-driven>
+    
+    
+    <task:annotation-driven /> <!-- 定时器开关-->
+  	<bean id="TestTask" class="com.cs.pro.task.TestTask"></bean> 
+  	<task:scheduled-tasks> 
+    	<!-- 这里表示的是每隔五秒执行一次 -->
+   	 	<task:scheduled ref="TestTask" method="test" cron="*/5 * * * * ?" /> 
+    	<task:scheduled ref="TestTask" method="test1" cron="*/10 * * * * ?"/> 
+  	</task:scheduled-tasks> 
+ 
+  <!-- 自动扫描的包名 -->
+  <context:component-scan base-package="com.spring.task" /> 
 
     <!-- 启动Spring MVC的注解功能，完成请求和注解POJO的映射 -->
     <bean
@@ -82,6 +101,9 @@
             </list>
         </property>
     </bean>
+    
+ 
+    
 
     <!-- 扫描controller（controller层注入） -->
     <context:component-scan base-package="com.cs.pro.controller" />

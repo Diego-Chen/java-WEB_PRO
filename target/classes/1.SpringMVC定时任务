@@ -1,0 +1,28 @@
+*****************************************第一种方式*********************************************************
+1.xmlns:task="http://www.springframework.org/schema/task"
+
+2.http://www.springframework.org/schema/task 
+  http://www.springframework.org/schema/task/spring-task-4.0.xsd
+  
+3.spring-mvc.xml的配置
+	<!-- 定时器开关-->
+  	<task:annotation-driven /> 
+  	<!-- id为文件名 class为类的全路径 -->
+  	<bean id="TestTask" class="com.cs.pro.task.TestTask"></bean> 
+  	<task:scheduled-tasks> 
+    	<!-- ref:类 method:方法  cron:执行规则 -->
+   	 	<task:scheduled ref="TestTask" method="test" cron="*/5 * * * * ?" /> 
+    	<task:scheduled ref="TestTask" method="test1" cron="*/10 * * * * ?"/> 
+  	</task:scheduled-tasks> 
+ 4.com.cs.pro.task.TestTask
+ 	//5秒执行一次的定时任务
+ 	public class TestTask {
+	  public void test() { 
+	    System.out.println("5秒执行一次的定时任务"); 
+	  } 
+	  //10秒执行一次的定时任务
+	  public void test1() { 
+	    System.out.println("10秒执行一次的定时任务"); 
+	  } 
+	}
+******************************************第一种方式********************************************************
