@@ -12,8 +12,8 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class TestTask1 {
-	@Scheduled(cron = "/5 * * * * ?")
-	public void update ()
+	@Scheduled(cron = "* * 12 * * ? ") 
+	public void update()
 	{
 		System.err.println("TestTask1五秒执行一次定时任务");
 	}

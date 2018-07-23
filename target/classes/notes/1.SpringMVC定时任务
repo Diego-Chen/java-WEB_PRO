@@ -1,0 +1,55 @@
+*****************************************第一种方式*********************************************************
+1.xmlns:task="http://www.springframework.org/schema/task"
+2.http://www.springframework.org/schema/task 
+  http://www.springframework.org/schema/task/spring-task-4.0.xsd
+3.spring-mvc.xml的配置
+  	<task:annotation-driven /> 
+  	<bean id="TestTask" class="com.cs.pro.task.TestTask"></bean>
+  	<task:scheduled-tasks> 
+   	 	<task:scheduled ref="TestTask" method="test" cron="*/5 * * * * ?" /> 
+  	</task:scheduled-tasks> 
+  	
+	拓展:	同个类中多个定时任务方法
+		  	<task:scheduled-tasks> 
+		   	 	<task:scheduled ref="TestTask" method="test" cron="*/5 * * * * ?" /> 
+		   	 	<task:scheduled ref="TestTask" method="test1" cron="*/10 * * * * ?" /> 
+		  	</task:scheduled-tasks> 
+	  	或者
+		  	<task:scheduled-tasks> 
+		   	 	<task:scheduled ref="TestTask" method="test" cron="*/5 * * * * ?" /> 
+		  	</task:scheduled-tasks> 
+		  	<task:scheduled-tasks> 
+		   	 	<task:scheduled ref="TestTask" method="test1" cron="*/10 * * * * ?" /> 
+		  	</task:scheduled-tasks> 
+ 4.
+	package com.cs.pro.task;
+	public class TestTask {
+		  public void test() { 
+		    System.out.println("5秒执行一次的定时任务"); 
+		  } 
+		  public void test1() { 
+		    System.out.println("10秒执行一次的定时任务"); 
+		  } 
+	}
+******************************************第一种方式********************************************************
+
+******************************************第二种方式********************************************************
+1.xmlns:task="http://www.springframework.org/schema/task"
+2.http://www.springframework.org/schema/task 
+  http://www.springframework.org/schema/task/spring-task-4.0.xsd
+3.spring-mvc.xml的配置
+  <task:annotation-driven /> 
+  <context:component-scan base-package="com.cs.pro.task" /> 
+4.
+	package com.cs.pro.task;
+	import org.springframework.scheduling.annotation.Scheduled;
+	import org.springframework.stereotype.Component;
+	@Component
+	public class TestTask1 {
+		@Scheduled(cron = "0/5 * * * * ? ") 
+		public void update()
+		{
+			System.err.println("TestTask1五秒执行一次定时任务");
+		}
+	}
+******************************************第二种方式********************************************************

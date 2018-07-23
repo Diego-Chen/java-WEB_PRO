@@ -29,11 +29,6 @@ public class TestController {
 		return testPost(data);
 	}
 
-	/**
-	 * @Title: loginPost
-	 * @Description: (小程序验证微信版本Post)
-	 * @return BaseRespModel<?>
-	 */
 	@RequestMapping(value = "/request", method = RequestMethod.POST)
 	@ResponseBody
 	public Object testPost(String data)
@@ -44,5 +39,7 @@ public class TestController {
 		UserBean user = userService.getUser(id);
 		return user;
 	}
+	
+	
 	
 }
