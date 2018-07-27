@@ -1,0 +1,9 @@
+进入tomcat目录
+开启
+bin/startup.sh
+关闭
+bin/shutdown.sh
+查看
+ps -ef | grep tomcat
+杀死进程
+kill -9 14705
