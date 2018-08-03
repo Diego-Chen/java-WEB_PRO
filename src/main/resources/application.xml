@@ -8,7 +8,9 @@
            http://www.springframework.org/schema/aop  
            http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
            http://www.springframework.org/schema/context  
-           http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+           http://www.springframework.org/schema/context/spring-context-3.0.xsd
+           http://www.springframework.org/schema/tx
+   		   http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
 
     <!-- 引入jdbc配置文件 -->
     <bean id="propertyConfigurer"
@@ -39,6 +41,17 @@
             <value>${jdbc_password}</value>
         </property>
     </bean>
+    
+    
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.jdbcTemplate">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+  	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+  		<property name="dataSource" ref="dataSource" />
+  	</bean>
+  	
+  	
 
     <!-- 自动扫描了所有的XxxxMapper.xml对应的mapper接口文件，这样就不用一个一个手动配置Mpper的映射了，只要Mapper接口类和Mapper映射文件对应起来就可以了。 -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
@@ -59,5 +72,10 @@
 
     <!-- 自动扫描注解的bean -->
     <context:component-scan base-package="com.cs.pro.service" />
+    
+    
+    
+    
+    
 
 </beans>

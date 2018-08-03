@@ -1,9 +1,15 @@
-进入tomcat目录
-开启
-bin/startup.sh
-关闭
-bin/shutdown.sh
-查看
-ps -ef | grep tomcat
-杀死进程
-kill -9 14705
+1.重启tomcat
+	进入tomcat目录
+	开启
+	bin/startup.sh
+	关闭
+	bin/shutdown.sh
+	查看
+	ps -ef | grep tomcat
+	杀死进程
+	kill -9 14705
+
+
+2.查找内容
+	 cat 2018-07-30.txt |grep "SET MA"|grep " ORD"|grep "_3300_" | grep "_14_"
+	 cat 2018-07-30.txt |grep "SET MA"|grep "ORD"|grep "_5180_" 

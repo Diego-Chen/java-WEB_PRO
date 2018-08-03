@@ -19,5 +19,11 @@
 			id = #{id}
 	</select>
 	
-
+	<select id="insertData" resultType="int" parameterType="com.cs.pro.model.UserBean" >
+		INSERT INTO
+			userinfo
+		(NAME,AGE,SEX,ADD)
+		VALUES 
+		(#{name},#{age},#{sex},#{add})
+	</select>
 </mapper>

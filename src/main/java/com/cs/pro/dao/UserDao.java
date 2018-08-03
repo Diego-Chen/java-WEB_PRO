@@ -11,4 +11,6 @@ import com.cs.pro.model.UserBean;
  */
 public interface UserDao {
     public UserBean	get(int id);
+    
+    public int insertData(UserBean userBean);
 }

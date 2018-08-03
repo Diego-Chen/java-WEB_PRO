@@ -1,0 +1,7 @@
+1. 创建三个JAVA_HOME。JAVA6_HOME，存放JDK1.7的安装路径。JAVA8_HOME，存放JDK1.8的安装路径。JAVA_HOME，如果需要1.7版本变量值设为%JAVA6_HOME%，如果需要1.8版本变量值设为%JAVA8_HOME%，便于切换。
+2. 配置CLASSPATH。新建，变量名CLASSPATH，变量值，.;%JAVA_HOME%\lib;%JAVA_HOME%\lib\tools.jar（第一个分号前前面有一个点）。
+3. 配置Path。注意！一定要在Path变量值最前加入%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin;
+错误:
+Error: could not find java.dll
+Error: Could not find Java SE Runtime Environment.
+Path系统环境变量中，把%JAVA_HOME%\bin调整到最前面。重新打开cmd java -version

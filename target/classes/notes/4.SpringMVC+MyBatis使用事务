@@ -1,0 +1,12 @@
+ 1.xml的事务命名空间
+ http://www.springframework.org/schema/tx
+ http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+ 2.配置数据源事务管理器
+ <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+  		<property name="dataSource" ref='dataSource' />
+ </bean>
+ 
+ 一.编程时事务(较为少用 原因是产生冗余 代码可读性较差) 
+ 二.声明式事务  :
+ 	1.xml配置:(不常用)
+ 	2.注解事务:(推荐 @Transactional)

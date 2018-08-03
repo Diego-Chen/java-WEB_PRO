@@ -10,3 +10,45 @@
         <!-- 文件的后缀名 -->
         <property name="suffix" value=".jsp"></property>
       </bean>
+      
+      
+      
+
+
+org.springframework.aop ——Spring的面向切面编程，提供AOP（面向切面编程）的实现
+org.springframework.asm——spring 2.5.6的时候需要asm jar包，spring3.0开始提供它自己独立的asm jar包
+org.springframework.aspects——Spring提供的对AspectJ框架的整合
+org.springframework.beans——所有应用都用到，包含访问配置文件，创建和管理bean等，是Spring IOC的基础实现。
+org.springframework.context.support——Spring context的扩展支持，用于MVC方面
+org.springframework.context——提供在基础IOC功能上的扩展服务，此外还提供许多企业级服务的支持，有邮件服务、任务调度、JNDI定位，EJB集成、远程访问、缓存以及多种视图层框架的支持。
+org.springframework.core——Spring的核心工具包，其他包依赖此包
+org.springframework.expression——Spring表达式语言
+org.springframework.instrument.tomcat——Spring对tomcat连接池的集成
+org.springframework.instrument——Spring对服务器的代理接口
+org.springframework.jdbc——对JDBC 的简单封装
+org.springframework.jms——为简化jms api的使用而做的简单封装
+org.springframework.orm——整合第三方的orm实现，如hibernate，ibatis，jdo以及spring 的jpa实现
+org.springframework.oxm——Spring对于object/xml映射的支持，可以让JAVA与XML之间来回切换
+org.springframework.test——对JUNIT等测试框架的简单封装
+org.springframework.transaction——为JDBC,HIBERNATE,JDO和JPA提供的一致性的声明式和简单编程式事务管理
+org.springframework.web.portlet——Spring MVC的增强
+org.springframework.web.servlet——对J2EE6.0 servlet3.0的支持
+org.springframework.web.struts——整合struts框架的支持，可以更方便更容易的集成Struts框架。
+org.springframework.web——包含Web应用开发时，用到Spring框架时所需的核心类，包括自动载入WebApplicationContext特性的类、Struts与JSF集成类、文件上传的支持类、Filter类和大量工具辅助类。
+
+
+Spring包依赖说明:
+
+1) spring-core.jar需commons-collections.jar，spring-core.jar是以下其它各个的基本。
+2) spring-beans.jar需spring-core.jar，cglib-nodep-2.1_3.jar
+3) spring-aop.jar需spring-core.jar，spring-beans.jar，cglib-nodep-2.1_3.jar，aopalliance.jar
+4) spring-context.jar需spring-core.jar，spring-beans.jar，spring-aop.jar，commons-collections.jar，aopalliance.jar
+5) spring-dao.jar需spring-core.jar，spring-beans.jar，spring-aop.jar，spring-context.jar
+6) spring-jdbc.jar需spring-core.jar，spring-beans.jar，spring-dao.jar
+7) spring-web.jar需spring-core.jar，spring-beans.jar，spring-context.jar
+8) spring-webmvc.jar需spring-core.jar/spring-beans.jar/spring-context.jar/spring-web.jar
+9) spring -hibernate.jar需spring-core.jar，spring-beans.jar，spring-aop.jar，spring- dao.jar，spring-jdbc.jar，spring-orm.jar，spring-web.jar，spring-webmvc.jar
+10) spring-orm.jar需spring-core.jar，spring-beans.jar，spring-aop.jar，spring- dao.jar，spring-jdbc.jar，spring-web.jar，spring-webmvc.jar
+11) spring -remoting.jar需spring-core.jar，spring-beans.jar，spring-aop.jar，spring- dao.jar，spring-context.jar，spring-web.jar，spring-webmvc.jar
+12) spring-support.jar需spring-core.jar，spring-beans.jar，spring-aop.jar，spring-dao.jar，spring-context.jar，spring-jdbc.jar
+13) spring-mock.jar需spring-core.jar，spring-beans.jar，spring-dao.jar，spring-context.jar，spring-jdbc.jar

@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.cs.test;
+package com.cs.test.tbyte;
 
 import java.util.Locale;
 
@@ -18,6 +18,17 @@ public class ByteMain {
 	 * @param args
 	 */
 	public static void main(String[] args) {
+		
+		
+		String asc = asciiToString("313033313030303033313734");
+		
+		System.out.println("asc:"+asc);
+	    
+	}
+	
+	
+	
+	public static void sysApdus(){
 		/*
 		byte数组截取当然要提到效率非常高的arraycopy，java中调用方式如下：
 		System.arraycopy(src, srcPos, dest, destPos, length)
@@ -60,7 +71,24 @@ public class ByteMain {
 		    }
 		    System.out.println("apdu:"+temp);
 		}
-	    
+	}
+	
+	
+	/**
+	 * ASCII转字符串
+	 * @param value
+	 * @return
+	 */
+	public static String asciiToString(String value)
+	{
+		StringBuffer sbu = new StringBuffer();
+		int len = value.length()/2;
+		for (int i = 0; i < len; i++)
+		{
+			int xx = Integer.valueOf(value.substring(i*2, i*2+2))-30;
+			sbu.append(xx);
+		}
+		return sbu.toString();
 	}
 
 }

@@ -15,6 +15,7 @@
     http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
     http://www.springframework.org/schema/task 
     http://www.springframework.org/schema/task/spring-task-4.0.xsd">
+    
     <!-- 设置Jackson在返回的时候过滤掉null的数据 -->
     <mvc:annotation-driven>
         <mvc:message-converters register-defaults="true">
@@ -91,5 +92,10 @@
     </bean>
 <!--扫描controller（controller层注入）-->
     <context:component-scan base-package="com.cs.pro.controller" />
+
+
+	
+    
+    
     
 </beans>
