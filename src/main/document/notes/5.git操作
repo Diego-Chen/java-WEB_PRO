@@ -1,7 +1,9 @@
-# 执行命令将config.properties加入不提交队列
-git update-index --assume-unchanged src/main/resources/config.properties
-# 执行命令将db.php取消加入不提交队列
-git update-index --no-assume-unchanged src/main/resources/config.properties
+1.加入不提交队列
+	# 执行命令将config.properties加入不提交队列
+	git update-index --assume-unchanged src/main/resources/config.properties
+	# 执行命令将db.php取消加入不提交队列
+	git update-index --no-assume-unchanged src/main/resources/config.properties
+
 #强行删除分支 只要存在分支就可以删除
 git branch -D XXX
 #删除分支  未提交或未被合并不能删除
@@ -14,3 +16,18 @@ $ git reset --hard HEAD~3        回退到前3次提交之前，以此类推，�
 $ git reset --hard commit_id     退到/进到 指定commit的sha码
 强推到远程：
 $ git push origin HEAD --force
+
+
+命令查看所有远程分支：
+git branch -r
+
+git checkout -b 本地分支名x origin/远程分支名x
+使用该方式会在本地新建分支x，并自动切换到该本地分支x。
+
+git fetch origin 远程分支名x:本地分支名x
+使用该方式会在本地新建分支x，但是不会自动切换到该本地分支x，需要手动checkout。
+
+
+撤销  git pull 操作
+git reflog   查看id
+git reset –hard A1(这里的A1就是你自己最初提交patch的commit后的id)
