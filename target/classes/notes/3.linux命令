@@ -1,15 +1,18 @@
-1.重启tomcat
-	进入tomcat目录
-	开启
+1.閲嶅惎tomcat
+	杩涘叆tomcat鐩綍
+	寮�惎
 	bin/startup.sh
-	关闭
+	鍏抽棴
 	bin/shutdown.sh
-	查看
+	鏌ョ湅
 	ps -ef | grep tomcat
-	杀死进程
+	鏉�杩涚▼
 	kill -9 14705
 
 
-2.查找内容
+2.鏌ユ壘鍐呭
 	 cat 2018-07-30.txt |grep "SET MA"|grep " ORD"|grep "_3300_" | grep "_14_"
 	 cat 2018-07-30.txt |grep "SET MA"|grep "ORD"|grep "_5180_" 
+	 
+3.删除
+	 rm -rf cb java-WEB_PRO/     -r是递归处理，就是一层一层的删；-f是强制删除。
