@@ -13,3 +13,7 @@
 2.查找内容
 	 cat 2018-07-30.txt |grep "SET MA"|grep " ORD"|grep "_3300_" | grep "_14_"
 	 cat 2018-07-30.txt |grep "SET MA"|grep "ORD"|grep "_5180_" 
+	 
+	 
+3.进入redis目录下启动Redis
+./redis-server /etc/redis/6379.conf
