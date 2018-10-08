@@ -1,18 +1,21 @@
-1.閲嶅惎tomcat
-	杩涘叆tomcat鐩綍
-	寮�惎
+1.tomcat
+	进入Tomcat目录
+	启动
 	bin/startup.sh
-	鍏抽棴
+	关闭
 	bin/shutdown.sh
-	鏌ョ湅
+	查看
 	ps -ef | grep tomcat
-	鏉�杩涚▼
+	kill进程
 	kill -9 14705
 
 
-2.鏌ユ壘鍐呭
+2.查找内容
 	 cat 2018-07-30.txt |grep "SET MA"|grep " ORD"|grep "_3300_" | grep "_14_"
 	 cat 2018-07-30.txt |grep "SET MA"|grep "ORD"|grep "_5180_" 
 	 
+	 
+3.进入redis目录下启动Redis
+./redis-server /etc/redis/6379.conf
 3.删除
 	 rm -rf cb java-WEB_PRO/     -r是递归处理，就是一层一层的删；-f是强制删除。

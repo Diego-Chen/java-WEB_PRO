@@ -41,3 +41,54 @@ Nginx缺省激活了accept_mutex，是一种保守的选择。如果关闭了它
 nginx采用了异步非阻塞的方式来处理请求
 
 nginx为提高效率，采用状态机来解析请求行，而且在进行method的比较时，没有直接使用字符串比较，而是将四个字符转换成一个整型，然后一次比较以减少cpu的指令数
+
+
+
+Linux 下Nginx操作
+1.从容停止
+	查看进程   ps -ef|grep nginx
+	杀死进程   kill -QUIT "进程号"
+2.快速停止
+	查看进程  ps -ef|grep nginx
+	杀死进程  kill -TERM XXX 或者  kill -INT XXX
+3.强制停止
+	pkill -9 nginx
+
+验证nginx配置文件是否正确
+方法一：进入nginx安装目录sbin下，输入命令./nginx -t
+	[root@localhost sbin]# ./nginx -t
+	nginx: the configuration file /usr/local/nginx/conf/nginx.conf syntax is ok
+	nginx: configuration file /usr/local/nginx/conf/nginx.conf test is successful
+	表示配置文件正确
+
+重启
+方法一. 进入nginx安装目录sbin下，输入命令./nginx -s reload	
+方法二. 查看进程  ps -ef|grep nginx
+	  kill -HUP 进程号
+	  
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

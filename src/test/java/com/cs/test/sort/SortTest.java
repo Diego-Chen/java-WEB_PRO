@@ -6,6 +6,7 @@ package com.cs.test.sort;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
 
 import com.alibaba.fastjson.JSON;
@@ -27,6 +28,15 @@ public class SortTest {
 			sortBean.setTime("2018070112000" + i);
 			sorts.add(sortBean);
 		}
+		for(int i = 0 ; i < 5 ; i++){
+			SortBean sortBean = new SortBean();
+			sortBean.setId(i);
+			sortBean.setTime("2018070112000" + i);
+			sorts.add(sortBean);
+		}
+		
+		
+		sorts = toHeavy(sorts);
 		sort(sorts);
 		
 		System.err.println(JSON.toJSONString(sorts));
@@ -59,6 +69,29 @@ public class SortTest {
 		// 排序，根据月份降序
 		Collections.sort(records, comp);
 	}
+	
+	
+	public static List<SortBean> toHeavy(List<SortBean> list){
+        HashMap<String,SortBean> tempMap = new HashMap<String,SortBean>();
+        for (SortBean bean : list) {
+            String key = bean.getTime();
+			//containsKey(Object key) 该方法判断Map集合对象中是否包含指定的键名。如果Map集合中包含指定的键名，则返回true，否则返回false
+			//containsValue(Object value)    value：要查询的Map集合的指定键值对象.如果Map集合中包含指定的键值，则返回true，否则返回false
+            if(tempMap.containsKey(key)){
+            	//HashMap是不允许key重复的，所以如果有key重复的话，那么前面的value会被后面的value覆盖                    
+                tempMap.put(key, bean);
+            }else{
+                tempMap.put(key, bean);
+            }
+        }
+        List<SortBean> tempList = new ArrayList<SortBean>();
+        for(String key : tempMap.keySet()){
+            tempList.add(tempMap.get(key));
+        }
+        return tempList;
+    }
+	
+	
 }
 
 
