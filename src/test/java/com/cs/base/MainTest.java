@@ -7,6 +7,7 @@ public class MainTest {
 		limit.getSex();
 		limit.getSex();
 		limit.getFault();
+		
 	}
 	
 }
