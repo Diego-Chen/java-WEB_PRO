@@ -42,16 +42,11 @@
         </property>
     </bean>
     
-    
-    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.jdbcTemplate">
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
 		<property name="dataSource" ref="dataSource" />
 	</bean>
+	
 
-  	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-  		<property name="dataSource" ref="dataSource" />
-  	</bean>
-  	
-  	
 
     <!-- 自动扫描了所有的XxxxMapper.xml对应的mapper接口文件，这样就不用一个一个手动配置Mpper的映射了，只要Mapper接口类和Mapper映射文件对应起来就可以了。 -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
