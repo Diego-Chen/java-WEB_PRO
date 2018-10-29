@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-module
   type="WEB"
-  name="java-WEB_PRO"
+  name="WEB_PRO"
   id="myeclipse.1531289710299"
   context-root="/WEB_PRO"
   j2ee-spec="6.0"
-  archive="java-WEB_PRO.war">
+  archive="WEB_PRO.war">
   <attributes>
     <attribute name="webrootdir" value="src/main/webapp" />
   </attributes>

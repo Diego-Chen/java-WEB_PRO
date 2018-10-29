@@ -19,3 +19,7 @@
 ./redis-server /etc/redis/6379.conf
 3.删除
 	 rm -rf cb java-WEB_PRO/     -r是递归处理，就是一层一层的删；-f是强制删除。
+
+4.将多个QR201810开头的文件整合成一个
+cat QR201810* >> QR20181023.txt
+	 
