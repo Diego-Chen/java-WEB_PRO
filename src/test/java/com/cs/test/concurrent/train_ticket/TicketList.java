@@ -28,16 +28,18 @@ public class TicketList {
 	//有10000张火车票，每张票都有一个编号，同时有10个窗口对外售票，如何确保车票的正常售卖？
 	public static void main(String[] args) {
 		
-//		for(int i = 0 ; i < 10 ; i ++){
-//			ThreadTest thread = ticket.new ThreadTest();
-//			thread.start();
-//
-//		}
-//		for(int i = 0 ; i < 100 ; i ++){
-//			ThreadTest thread = ticket.new ThreadTest();
-//			thread.start();
-//
-//		}
+/*
+for(int i = 0 ; i < 10 ; i ++){
+ThreadTest thread = ticket.new ThreadTest();
+thread.start();
+
+}
+for(int i = 0 ; i < 100 ; i ++){
+ThreadTest thread = ticket.new ThreadTest();
+thread.start();
+
+}
+*/
 		
 		
 		/*

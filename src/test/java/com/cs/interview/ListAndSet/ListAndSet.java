@@ -30,6 +30,8 @@ public class ListAndSet {
 	 */
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public void arrayListAndLinkedList(){
+		
+	
 	   /*
 		   1、ArrayList是实现了基于动态数组的数据结构,因为地址连续，一旦数据存储好了，查询操作效率会比较高（在内存里是连着放的）。
 		   2、因为地址连续， ArrayList要移动数据,所以插入和删除操作效率比较低。
