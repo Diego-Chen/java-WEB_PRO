@@ -56,3 +56,11 @@ git服务器ip端口修改的本地处理
 修改url并保存就可以了
 
 
+撤销本地commit
+git reset --soft HEAD^
+撤销add
+git reset HEAD
+
+
+
+

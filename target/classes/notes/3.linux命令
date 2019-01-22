@@ -23,3 +23,21 @@
 4.将多个QR201810开头的文件整合成一个
 cat QR201810* >> QR20181023.txt
 	 
+5.查看磁盘空间
+df -hl 查看磁盘剩余空间
+df -h 查看每个根路径的分区大小
+du -sh [目录名] 返回该目录的大小
+du -sm [文件夹] 返回该文件夹总M数
+du -h [目录名] 查看指定文件夹下的所有文件大小（包含子文件夹）
+sudo fdisk -l   查看硬盘的分区
+
+
+
+tar –xvf file.tar //解压 tar包
+tar -xzvf file.tar.gz //解压tar.gz
+tar -xjvf file.tar.bz2   //解压 tar.bz2
+tar –xZvf file.tar.Z   //解压tar.Z
+unrar e file.rar //解压rar
+unzip file.zip //解压zip
+
+
