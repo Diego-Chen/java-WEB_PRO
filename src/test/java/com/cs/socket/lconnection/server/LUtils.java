@@ -23,6 +23,7 @@ public class LUtils {
 	
 	static boolean running;
 	
+	
     public void addActionMap(Class<Object> cls,ObjectAction action){  
     	actionMapping.put(cls, action);  
     }  

@@ -3,8 +3,6 @@
  */
 package com.cs.socket.lconnection.server;
 
-
-
 /**
  * @author Administrator
  *
@@ -28,16 +26,20 @@ public class Server {
         connWatchDog.start();  
     }  
 
-    @SuppressWarnings("deprecation")  
     public void stop(){  
     	//结束线程
         if(connWatchDog!=null)
-         	connWatchDog.stop(); 
+        {
+//        	connWatchDog.stop(); 
+        	connWatchDog.interrupt();
+        	System.out.println("查看中断标志" +  connWatchDog.isInterrupted());
+        }
+         	
         
         //状态量还原
         if(LUtils.running)
         	LUtils.running=false;  
-        
     }  
-
 }
+
+
