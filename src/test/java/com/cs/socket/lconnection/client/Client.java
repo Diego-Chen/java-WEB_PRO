@@ -24,6 +24,14 @@ public class Client {
     public static void main(String[] args) throws UnknownHostException, IOException {  
         Client client = new Client(CUtils.ip,CUtils.port);  
         client.start();  
+        
+        try {
+			Thread.sleep(30000);
+			client.stop();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     }  
 
     public void start() throws UnknownHostException, IOException {  

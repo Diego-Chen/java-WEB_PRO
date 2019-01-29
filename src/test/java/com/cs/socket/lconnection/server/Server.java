@@ -30,7 +30,6 @@ public class Server {
     	//结束线程
         if(connWatchDog!=null)
         {
-//        	connWatchDog.stop(); 
         	connWatchDog.interrupt();
         	System.out.println("查看中断标志" +  connWatchDog.isInterrupted());
         }

@@ -3,7 +3,8 @@
 	git update-index --assume-unchanged src/main/resources/config.properties
 	# 执行命令将db.php取消加入不提交队列
 	git update-index --no-assume-unchanged src/main/resources/config.properties
-
+2.git rm -r -n —cached Constants.java (-n是为了不删掉文件) //不提交文件
+  git rm -r —cached Constants.java 
 #强行删除分支 只要存在分支就可以删除
 git branch -D XXX
 #删除分支  未提交或未被合并不能删除
