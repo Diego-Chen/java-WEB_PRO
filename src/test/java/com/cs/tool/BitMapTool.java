@@ -8,7 +8,7 @@ import java.util.Locale;
 
 /**
  * @author Administrator
- *
+ * 64域位图计算
  */
 public class BitMapTool {
 	

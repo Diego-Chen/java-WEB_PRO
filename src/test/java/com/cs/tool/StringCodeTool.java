@@ -18,17 +18,6 @@ public class StringCodeTool {
 
 	static
 	{
-		initMask();
-	}
-	static byte[] asciiMask = new byte[]
-	{ '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F' };
-	
-
-	private static String[] binaryArray =
-	{ "0000", "0001", "0010", "0011", "0100", "0101", "0110", "0111", "1000", "1001", "1010", "1011", "1100", "1101", "1110", "1111" };
-
-	private static void initMask()
-	{ // init mask
 		for (int i = 0; i <= 9; i++)
 		{
 			mask[i + 48] = (byte) i;
@@ -42,63 +31,38 @@ public class StringCodeTool {
 			mask[i + 65] = (byte) (10 + i);
 		}
 	}
+	static byte[] asciiMask = new byte[]
+	{ '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F' };
+	
 
-	public static int[] byte2Bitmap(int b)
-	{
-		int[] bitmap = new int[8];
-		for (int i = 0; i < 8; i++)
-		{
-			bitmap[i] = ((b >> (8 - i - 1)) & 0x01);
+	private static String[] binaryArray =
+	{ "0000", "0001", "0010", "0011", "0100", "0101", "0110", "0111", "1000", "1001", "1010", "1011", "1100", "1101", "1110", "1111" };
+
+	
+	
+	public static void main(String[] args) {
+		//进制转换
+		{	
+			int n = 130000;
+			String bit2 = Integer.toBinaryString(n);
+			String bit8 = Integer.toOctalString(n);
+			String bit16 = Integer.toHexString(n);
+			System.out.println("2进制:" + bit2);
+			System.out.println("8进制:" + bit8);
+			System.out.println("16进制:" + bit16);
+			//前一个参数为各进制字符串，后一个参数标识字符串的进制
+			int int10 = Integer.parseInt(bit2, 2);
+			System.out.println("转10进制:" + int10);
 		}
-		return bitmap;
-	}
-
-	public static byte[] intToBCD(int n, int balen)
-	{
-		byte[] ret = new byte[balen];
-		int tmp;
-		for (int i = 1; i <= balen; i++)
-		{
-			tmp = n % 100;
-			ret[balen - i] = (byte) (tmp / 10 * 16 + tmp % 10);
-
-			n -= tmp;
-			if (n == 0)
-			{
-				break;
-			}
-			n /= 100;
+		
+		byte[] bs = hexStr2Byte("FFFF");
+		for (byte b : bs) {
+			System.out.println(b);
 		}
-		return ret;
+		System.out.println();
+		
 	}
-
-	public static int bcdToInt(byte[] ba, int idx, int len)
-	{
-		int jinwei = len * 2;
-		int ret = 0;
-		int temp = 0;
-		int pow;
-		int posNum; // 正数
-		for (int i = 0, n = len; i < n; i++)
-		{
-			pow = pow(10, (jinwei - 1));
-			posNum = ba[idx + i] >= 0 ? ba[idx + i] : ba[idx + i] + 256;
-			temp = (posNum / 16) * pow + posNum % 16 * pow / 10;
-			ret += temp;
-			jinwei -= 2;
-		}
-		return ret;
-	}
-
-	public static int pow(int x, int y)
-	{
-		int n = x;
-		for (int i = 1; i < y; i++)
-		{
-			n *= x;
-		}
-		return n;
-	}
+	
 
 	public static byte[] hexStr2Byte(String hex)
 	{
@@ -199,10 +163,6 @@ public class StringCodeTool {
 		for (int i = 0; i < len; i++)
 		{
 			ret[i] = (byte) ((value >> 8 * (len - i - 1)) & 0xff);
-			// ret[i] = (byte) (value&0xff);
-			// if(ret[i]==0)
-			// ret[i]=(byte) 0xff;
-			// value>>=8;
 		}
 		return ret;
 	}
@@ -481,22 +441,6 @@ public class StringCodeTool {
 		return sbu.toString();
 	}
 
-	// /**
-	// * ascii转文本
-	// *
-	// * @param value
-	// * @return
-	// */
-	// public static String asciiToString(String value)
-	// {
-	// StringBuffer sbu = new StringBuffer();
-	// String[] chars = value.split(",");
-	// for (int i = 0; i < chars.length; i++)
-	// {
-	// sbu.append((char) Integer.parseInt(chars[i]));
-	// }
-	// return sbu.toString();
-	// }
 
 	/**
 	 * ASCII转字符串
