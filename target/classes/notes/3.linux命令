@@ -16,6 +16,7 @@
 	 
 	 
 3.进入redis目录下启动Redis
+/usr/local/redis-4.0.1/src
 ./redis-server /etc/redis/6379.conf
 3.删除
 	 rm -rf cb java-WEB_PRO/     -r是递归处理，就是一层一层的删；-f是强制删除。
@@ -39,5 +40,30 @@ tar -xjvf file.tar.bz2   //解压 tar.bz2
 tar –xZvf file.tar.Z   //解压tar.Z
 unrar e file.rar //解压rar
 unzip file.zip //解压zip
+
+
+5.启动MySQL 
+service mysqld start (5.0版本是mysqld)
+service mysql start (5.5.7版本是mysql)
+
+
+
+全部关掉之后重启
+1.Tomcat 8088,8089
+进入Tomcat目录 执行:bin/startup.sh
+进入8088同级目录  NCI_W_MANAGE下执行：sh nci_w_manage.sh
+2.nginx
+进入nginx目录执行：[root@lvs-webserver1 nginx]# ./sbin/nginx
+3.redis
+进入redis/src 执行：./redis-server /etc/redis/6379.conf
+4.mysql
+进入208MySQL目录执行：service mysql start
+
+
+
+
+
+
+
 
 
