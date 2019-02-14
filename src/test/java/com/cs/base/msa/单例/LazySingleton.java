@@ -3,31 +3,28 @@
  */
 package com.cs.base.msa.单例;
 
-import javax.transaction.Synchronization;
 
 /**
  * @author Administrator
- *
+ * 懒汉单例
  */
 
 public class LazySingleton {
-	static LazySingleton ton;
+	static LazySingleton ton = null;
 	
-	/**
-	 * 懒汉
-	 * @return
-	 */
-	synchronized public  static  LazySingleton lzTon() {
+	//1
+    public  static  LazySingleton lzTon1() {
 		if(null == ton){
 			ton = new LazySingleton();
 		}
 		return ton;
 	}
-	
-	
-	
-	public void print(){
-		System.out.println("懒汉式加载单例");
+    
+    //2
+    synchronized public  static  LazySingleton lzTon2() {
+		if(null == ton){
+			ton = new LazySingleton();
+		}
+		return ton;
 	}
-	
 }

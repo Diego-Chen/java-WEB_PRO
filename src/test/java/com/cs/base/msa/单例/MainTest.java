@@ -14,7 +14,6 @@ public class MainTest {
 	
 	public static void main(String[] args) {
 		LazySingleton ton = LazySingleton.lzTon();
-		ton.print();
 	}
 	
 	
