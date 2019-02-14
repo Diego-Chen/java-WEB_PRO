@@ -13,7 +13,6 @@ package com.cs.base.msa.单例;
 public class MainTest {
 	
 	public static void main(String[] args) {
-		LazySingleton ton = LazySingleton.lzTon();
 	}
 	
 	
