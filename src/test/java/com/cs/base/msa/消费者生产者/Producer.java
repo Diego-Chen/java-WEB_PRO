@@ -30,7 +30,6 @@ public class Producer implements Runnable {
 	
 	@SuppressWarnings("unchecked")
 	private void produce(int i) throws InterruptedException{
-		
 		//商品队列超过设置的上限时，等待消费后继续生产
 		while (queues.size() == size) {
 			synchronized (queues) {
