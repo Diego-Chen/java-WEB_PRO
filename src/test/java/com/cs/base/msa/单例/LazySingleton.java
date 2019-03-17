@@ -3,28 +3,27 @@
  */
 package com.cs.base.msa.单例;
 
+import java.io.Serializable;
+
 
 /**
  * @author Administrator
  * 懒汉单例
  */
 
-public class LazySingleton {
-	static LazySingleton ton = null;
+public class LazySingleton implements Serializable{
+	private static final long serialVersionUID = 1L;
+	private volatile static LazySingleton ton = null;
 	
-	//1
-    public  static  LazySingleton lzTon1() {
-		if(null == ton){
-			ton = new LazySingleton();
-		}
-		return ton;
-	}
-    
-    //2
-    synchronized public  static  LazySingleton lzTon2() {
-		if(null == ton){
-			ton = new LazySingleton();
-		}
-		return ton;
+	private LazySingleton(){}
+	
+    public  static  LazySingleton lzTon() {
+    	if(null == ton){
+    		synchronized(LazySingleton.class){
+    			if(null == ton)
+    				ton = new LazySingleton();
+    		}
+    	}
+    	return ton;
 	}
 }
