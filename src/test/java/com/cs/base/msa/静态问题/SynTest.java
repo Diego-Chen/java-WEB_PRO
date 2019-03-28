@@ -21,7 +21,5 @@ public class SynTest {
 	static void testStatus(){
 		//System.out.println(status);
 	}
-	
-	
 
 }
