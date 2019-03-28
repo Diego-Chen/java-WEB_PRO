@@ -1,7 +1,6 @@
 package com.cs.base.msa.GC问题;
 
 public class Test {
-	
 	private Object instance = null;
 	private static final int _1MB = 1024 * 1024;
 	private byte[] bigSize = new byte[2*_1MB];
@@ -13,6 +12,7 @@ public class Test {
 		test2.instance = test1;
 		test1 = null;
 		test2 = null;
+		System.out.println(test1);
 		System.gc();
 	}
 }

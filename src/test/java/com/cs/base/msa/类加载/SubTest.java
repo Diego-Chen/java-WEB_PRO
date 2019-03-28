@@ -5,15 +5,13 @@ public class SubTest extends LoadTest{
 		System.out.println("b");
 	}
 	
-	
 	public SubTest() {
 		System.out.println("d");
 	}
 	
-	
 	public static void main(String[] args) {
 		SubTest t1 = new SubTest();
-		t1 = new SubTest();
+		  t1 = new SubTest();
 	}
 	
 }

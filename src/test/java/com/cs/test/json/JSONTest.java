@@ -16,9 +16,15 @@ import com.cs.test.model.ReqData;
  *
  */
 public class JSONTest {
-	public static void main(String[] args) {
-		alibabaJSONArray();
-	}
+	
+	
+
+
+	
+	
+//	public static void main(String[] args) {
+//		alibabaJSONArray();
+//	}
 	
 	
     public static void	alibabaJSON(){

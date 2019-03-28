@@ -34,6 +34,12 @@ public class Client {
 				if(CSUtils.SOCKETTYPE == CSUtils.SOCKETS)
 				//InputStream/OutputStream
 				{
+					try {
+						Thread.sleep(10000);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 					//获取输出流，输送数据到远程服务器
 					os.write(bstream);
 					//获取输入流，得到服务器返回的数据

@@ -20,6 +20,7 @@ public class Service {
         try {  
         	//创建服务端连接实例,设,监听该端口接收到的连接
         	ServerSocket serverSocket = new ServerSocket(CSUtils.port); 
+        	System.out.println("开始监听端口等待客户端连接...");
         	//获取客户端连接
             socket = serverSocket.accept();
             //1.
@@ -35,6 +36,7 @@ public class Service {
             	//获取消息的长度  
                 int count = 0;
                 byte[] body = null;
+                System.out.println("数据接收开始...");
                 while(count == 0){
                 	count = is.available(); 
                 	if(count > 0){
@@ -45,6 +47,7 @@ public class Service {
                         CSUtils.log(false,"接收数据:",message);
                 	}
                 }
+                System.out.println("数据接收完成");
                 String result =  "123";
                 body = result.getBytes(CSUtils.encode);
                 CSUtils.log(false,"发送数据:",new String(body));

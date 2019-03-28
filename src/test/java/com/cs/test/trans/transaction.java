@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.transaction.support.TransactionCallback;
 import org.springframework.transaction.support.TransactionTemplate;
 
+import com.alibaba.fastjson.JSONArray;
 import com.cs.pro.dao.UserDao;
 import com.cs.pro.model.UserBean;
 
@@ -21,10 +22,7 @@ public class transaction {
 	private UserDao userDao;
 	private TransactionTemplate transactionTemplate;
 	
-	public static void main(String[] args) {
-		
-	}
-	
+
 	
 	/**
 	 * 编程式事务管理
