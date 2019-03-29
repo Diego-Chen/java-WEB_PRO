@@ -37,6 +37,12 @@ public class MainTest {
 		Integer f3 = 150, f4 = 150;  
 		System.out.println(f1==f2);
 		System.out.println(f3==f4);
-	
+		
+		
+		short s = 1;
+		//s = s + 1;
+		// s+1 是int类型  复制符号将一个int类型复制给short类型，会有丢失精度问题
+		s += 1;//相当于s = (short)(s + 1);
+		
 	}
 }
