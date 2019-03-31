@@ -13,9 +13,106 @@ import java.util.List;
 public class StringTest {
 	
 	public static void main(String[] args) {
-		String a = "abcdddefabc";
+		String a = "";
 		
-		listBuffer2(a);
+		
+//		String aString2 = "b1";
+//		final String cString2 = "1";//标识cString2指针是不可变的
+//		String bString2 = "b"+cString2;
+//		System.out.println(aString2 == bString2);
+		
+//		String aString2 = "b1";
+//	    String cString2 = "1";//标识cString2指针是不可变的
+//		String bString2 = "b"+cString2;
+//		System.out.println(aString2 == bString2);
+		
+		czzfc();
+		
+	}
+	
+	/**
+	 * 查找子字符串
+	 */
+	public static void czzfc(){
+		String superS = "thjabdddefabc";
+		String t = "abc";
+		int re = -1;
+		for (int i = 0; i < superS.length(); i++) {
+			if(superS.charAt(i) == t.charAt(0)){
+				if(i+t.length()-1<superS.length()){
+					for (int j = 0; j < t.length(); j++) {
+						if(superS.charAt(i+j) != t.charAt(j)){
+							break;
+						}
+						if(j== t.length()-1){
+							re = i;
+						}
+					}
+				}
+			}
+		}
+		System.out.println(re);
+		
+		
+		
+	}
+	
+	
+	/**
+	 * 二分法查找字符
+	 */
+	public static void eff(){
+		int[] a = {1,3,3,3,3,5,7,8};
+		int len = 5;
+		int m = 3;
+		int re = -1;
+		for (int i = 0; i < len; i++) {
+			int temp = a[len/2];
+			if(temp > m){
+				len = len/2;
+				continue;
+			}else if(temp < m){
+				i = len/2;
+				continue;
+			}else if(temp == m){
+				re = len/2;
+				for (int j = re; j >=0 ; j--) {
+					if(a[j] != m){
+						re = j+1;
+						break;
+					}
+				}
+				break;
+			}
+		}
+		System.out.println(re);
+		
+		
+		
+	}
+	
+	
+	
+	//查找首个重复出现的字符
+	public static void cfzfc(){
+		String s = "qywyer23tdd";
+		char[] t = s.toCharArray();
+		int count = t.length;
+		int len = count;
+		char re = '!';
+		for (int i = 0; i < len ; i++) {
+			for(int j = i+1 ; j < len ;j++){
+				if(t[i] == t[j]){
+					re = t[i];
+					break;
+				}
+			}
+			if(re != '!'){
+				break;
+			}
+		}
+		System.out.println(re);
+		
 	}
 	
 	
