@@ -338,6 +338,14 @@
 			<artifactId>amqp-client</artifactId>
 			<version>3.6.5</version>
 		</dependency>
+		
+		
+    	<dependency>
+        	<groupId>org.mongodb</groupId>
+       		 <artifactId>mongodb-driver</artifactId>
+        	<version>3.0.1</version>
+    	</dependency>
+		
 
     
   </dependencies>
