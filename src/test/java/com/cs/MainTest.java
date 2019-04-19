@@ -3,9 +3,6 @@
  */
 package com.cs;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.Scanner;
 
 
 
@@ -37,9 +34,18 @@ public class MainTest {
 		
 		
 		
-//		String a = "a";
-//		a = a + "b" + "c" + "d" + "e";
-//		System.out.println(a);
+		String a = "a";
+		
+		for (int i = 0; i < 100; i++) {
+			a = a + i;
+		}
+		
+		
+		System.out.println(a);
+		
+		
+		
+		
 		
 		
 //		StringBuffer sb = new StringBuffer("a");
@@ -60,20 +66,20 @@ public class MainTest {
 //		System.out.println(e==d);
 //		System.err.print(a);
 		
-		String input = "But I'm not dead yet! I feel happy!";
+//		String input = "But I'm not dead yet! I feel happy!";
 //		String[] is = input.split(" ");
 //		for (String string : is) {
 //			System.out.println(string);
 //		}
 		
-		Scanner ne = new Scanner(input);
-		while (ne.hasNext()) {
-			String string = (String) ne.next();
-			System.out.println(string);
-			
-		}
+//		Scanner ne = new Scanner(input);
+//		while (ne.hasNext()) {
+//			String string = (String) ne.next();
+//			System.out.println(string);
+//			
+//		}
 		
-		
+	
 		
 	}
 	
